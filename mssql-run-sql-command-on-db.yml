@@ -1,4 +1,4 @@
-- name: SQL Create DB with Script
+- name: SQL 2016 Create DB with Script
   hosts: all
   vars:
     ansible_port: 5986
@@ -9,4 +9,4 @@
     login_password: "{{ ansible_password }}"
     instance_name: "{{ ansible_hostname }}"
   roles:
-    - sql-create-db-with-script
+    - sql-run-sql-script
