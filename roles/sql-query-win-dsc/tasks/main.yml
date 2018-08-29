@@ -2,12 +2,12 @@
 
 - name: Setup the SqlServerDsc module
   win_psmodule:
-    name: xSQLServer
+    name: SqlServerDsc
     state: present
 
 - name: Run query
   win_dsc:
-    resource_name: SqlServerDsc
+    resource_name: MSFT_SqlScriptQuery
     ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
     GetQuery: "select * from rhdemo1.dbo"
   register: sql_query
