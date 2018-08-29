@@ -8,6 +8,7 @@
 - name: Run query
   win_dsc:
     resource_name: SqlServerDsc
+    Ensure: Present
     ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
     GetQuery: "select * from rhdemo1.dbo"
   register: sql_query
