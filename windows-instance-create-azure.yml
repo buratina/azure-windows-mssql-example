@@ -1,0 +1,12 @@
+- name: Deploy Windows Instance(s) on Azure
+  hosts: localhost
+  gather_facts: False
+  connection: local
+  become: no
+  vars_files:
+    - config/win-nodes-azure.yml
+  vars:
+    ansible_port: 5986
+    windows: yes
+  roles:
+    - ansible-role-azure
