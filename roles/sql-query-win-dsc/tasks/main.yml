@@ -9,7 +9,7 @@
   win_dsc:
     resource_name: SqlServerDsc
     ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
-    GetQuery: "select * from dbo"
+    GetQuery: "select * from rhdemo1.dbo"
   register: sql_query
 
 - name: debug sql_query
