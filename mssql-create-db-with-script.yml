@@ -1,0 +1,12 @@
+- name: SQL Create DB with Script
+  hosts: all
+  vars:
+    ansible_port: 5986
+    ansible_connection: winrm
+    ansible_winrm_transport: credssp
+    ansible_winrm_server_cert_validation: ignore
+    login_user: "{{ ansible_user }}"
+    login_password: "{{ ansible_password }}"
+    instance_name: "{{ ansible_hostname }}"
+  roles:
+    - sql_create_db_with_script
