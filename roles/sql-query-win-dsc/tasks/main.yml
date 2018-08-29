@@ -1,0 +1,17 @@
+---
+
+- name: Setup the SqlServerDsc module
+  win_psmodule:
+    name: SqlServerDsc
+    state: present
+
+- name: Run query
+  win_dsc:
+    resource_name: SqlServerDsc
+    ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
+    GetQuery: "select * from dbo"
+  register: sql_query
+
+- name: debug sql_query
+  debug:
+    var: sql_query

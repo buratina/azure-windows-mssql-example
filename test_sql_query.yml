@@ -9,4 +9,4 @@
     login_password: "{{ ansible_password }}"
     instance_name: "{{ ansible_hostname }}"
   roles:
-    - sql-run-sql-script
+    - sql-query-win-dsc
