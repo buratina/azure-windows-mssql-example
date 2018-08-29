@@ -9,7 +9,17 @@
   win_dsc:
     resource_name: SqlScriptQuery
     ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
-    GetQuery: "select * from rhdemo1.dbo"
+    GetQuery: SELECT Name FROM sys.databases WHERE Name = '{{ db_name }}' FOR JSON AUTO
+    TestQuery: >
+      if (select count(name) from sys.databases where name = '{{ db_name }}') = 0
+      BEGIN
+          RAISERROR ('Did not find database [{{ db_name }}]', 16, 1)
+      END
+      ELSE
+      BEGIN
+          PRINT 'Found database [{{ db_name }}]'
+      END
+    SetQuery: CREATE DATABASE [{{ db_name }}]
   register: sql_query
 
 - name: debug sql_query
