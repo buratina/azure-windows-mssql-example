@@ -1,15 +1,5 @@
 ---
 nodes:
-  - name: app1
-    role: app
-    app_name: mssql_demo
-    vm_size: Standard_A1_v2
-    os_type: Windows
-    image:
-      sku: 2016-Datacenter-Server-Core
-      publisher: MicrosoftWindowsServer
-      version: latest
-      offer: WindowsServer
   - name: sql1
     role: sql
     app_name: mssql_demo
@@ -20,3 +10,13 @@ nodes:
       publisher: MicrosoftSQLServer
       version: latest
       offer: SQL2014SP2-WS2012R2
+  - name: app1
+    role: app
+    app_name: mssql_demo
+    vm_size: Standard_A1_v2
+    os_type: Windows
+    image:
+      sku: 2016-Datacenter-Server-Core
+      publisher: MicrosoftWindowsServer
+      version: latest
+      offer: WindowsServer
