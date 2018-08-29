@@ -7,7 +7,7 @@
 
 - name: Run query
   win_dsc:
-    resource_name: MSFT_SqlScriptQuery
+    resource_name: SqlScriptQuery
     ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
     GetQuery: "select * from rhdemo1.dbo"
   register: sql_query
