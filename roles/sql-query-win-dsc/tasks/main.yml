@@ -8,7 +8,7 @@
 - name: Run query
   win_dsc:
     resource_name: SqlScriptQuery
-    ServerInstance: '{{ ansible_host }}\{{ instance_name }}'
+    ServerInstance: '{{ ansible_host }}\MSSQLSERVER'
     GetQuery: SELECT Name FROM sys.databases WHERE Name = '{{ db_name }}' FOR JSON AUTO
     TestQuery: >
       if (select count(name) from sys.databases where name = '{{ db_name }}') = 0
