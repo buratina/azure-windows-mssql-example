@@ -5,8 +5,13 @@ nodes:
     app_name: mssql_demo
     vm_size: Standard_A1_v2
     os_type: Windows
+#    image:
+#      sku: Enterprise
+#      publisher: MicrosoftSQLServer
+#      version: latest
+#      offer: SQL2014SP2-WS2012R2
     image:
-      sku: Enterprise
-      publisher: MicrosoftSQLServer
+      sku: 2019-Datacenter-Core-smalldisk
+      publisher: MicrosoftWindowsServer
       version: latest
-      offer: SQL2014SP2-WS2012R2
+      offer: WindowsServer
