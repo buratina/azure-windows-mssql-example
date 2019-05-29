@@ -3,7 +3,7 @@ nodes:
   - name: sql1
     role: sql
     app_name: mssql_demo
-    vm_size: Standard_A1_v2
+    vm_size: Standard_A2_v2
     os_type: Windows
 #    image:
 #      sku: Enterprise
